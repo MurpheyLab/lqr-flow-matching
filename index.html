@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Ergodic coverage made easy with flow matching.">
+    <meta name="keywords" content="Ergodic coverage, flow matching, generative models, robotics">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flow Matching Ergodic Coverage</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script src="./static/js/slider.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+                <a class="navbar-item" href="https://murpheylab.github.io/">
+                    <span class="icon">
+                        <i class="fas fa-home"></i>
+                    </span>
+                </a>
+
+                <!-- <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        About Authors
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="https://maxsun.io/">
+                            Max Muchen Sun
+                        </a>
+                        <a class="navbar-item" href="https://apinosky.github.io/">
+                            Allison Pinosky
+                        </a>
+                        <a class="navbar-item" href="https://murpheylab.github.io/people/toddmurphey">
+                            Todd Murphey
+                        </a>
+                    </div>
+                </div> -->
+            </div>
+
+        </div>
+    </nav>
+
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">Flow Matching Ergodic Coverage</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="https://maxsun.io">Max Muchen Sun</a>,</span>
+                            <span class="author-block">
+                                <a href="https://apinosky.github.io">Allison Pinosky</a>,</span>
+                            <span class="author-block">
+                                <a href="https://murpheylab.github.io/people/toddmurphey">Todd Murphey</a></span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">Department of Mechanical Engineering, Northwestern University</span>
+                        </div>
+
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- PDF Link. -->
+                                <span class="link-block">
+                                    <a href=""
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-file-pdf"></i>
+                                        </span>
+                                        <span>PDF</span>
+                                    </a>
+                                </span>
+                                
+                                <!-- Code Link. -->
+                                <span class="link-block">
+                                    <a href="https://github.com/MurpheyLab/flow-ergodic-coverage.git"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+
+                                <!-- Video Link. -->
+                                <span class="link-block">
+                                    <a href=""
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-youtube"></i>
+                                        </span>
+                                        <span>Video</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <video id="teaser" autoplay muted loop playsinline height="100%">
+                    <source src="./static/videos/franka_erasing.mp4" type="video/mp4">
+                </video>
+                </script>
+                <h2 class="subtitle has-text-centered">
+                    <!-- <h2 class="title is-3"></h2> -->
+                    Closed-loop erasing experiment with a Franka robot.
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Ergodic coverage provides a robust framework for generating exploratory behaviors in embodied agents by aligning the spatial distribution of an agent's trajectory with a target distribution. However, solving this optimization problem is challenging due to the need to minimize the difference between distributions while respecting the agent's dynamic constraints. In this work, we propose an alternative approach to ergodic coverage through an unconstrained optimization paradigm based on flow matching, a technique widely used in variational inference and generative modeling for efficient and scalable sampling. We formally show that the flow matching problem for ergodic coverage is equivalent to a linear quadratic optimal control problem, enabling a closed-form solution. Numerical benchmarks demonstrate that our method offers two key advantages: (1) it enables unconstrained optimization under the standard Fourier ergodic metric with comparable coverage performance and improved computational efficiency compared to existing trajectory optimization methods, and (2) it facilitates the use of alternative metrics to address the limitations of existing methods. Specifically, incorporating Stein variational gradient flow enables ergodic coverage over unnormalized distributions without compromising coverage performance or computational efficiency, and incorporating optimal transport-based flow significantly improves coverage performance for non-smooth distributions. Finally, we validate the effectiveness of our method through hardware demonstrations on a Franka Emika Panda robot.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- / Abstract. -->
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            Website template borrowed from <a href="https://nerfies.github.io">Nerfies</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

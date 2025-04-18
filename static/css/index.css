@@ -1,0 +1,273 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}
+/* .image-comp-container {
+  position: relative;
+  width: 100%;
+  height: 800;
+  overflow: hidden;
+}
+.image-overlay {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+.image-overlay-over img {
+  display: block;
+  vertical-align: middle;
+}
+.img-comp-slider {
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  set the appearance of the slider:
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  opacity: 0.7;
+  border-radius: 50%;
+} */
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border: 2px solid white;
+}
+
+.container .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 400px 100%;
+}
+
+.container .background-img {
+  /* background-image: url('https://i.imgur.com/s08MkXC.jpg'); */
+  width: 100%;
+  height: 100%;
+}
+
+.container .foreground-img {
+  /* background-image: url('https://i.imgur.com/PfIWek4.jpg'); */
+  width: 50%;
+  height: 100%;
+}
+
+.container .slider {
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(242, 242, 242, 0.3);
+  outline: none;
+  margin: 0;
+  transition: all 0.2s;
+}
+
+.container .slider:hover {
+  background: rgba(242, 242, 242, 0.1);
+}
+
+.container .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 6px;
+  height: 600px;
+  background: white;
+  cursor: pointer;
+}
+
+.container .slider::-moz-range-thumb {
+  width: 6px;
+  height: 600px;
+  background: white;
+  cursor: pointer;
+}
+
+.container .slider-button {
+  pointer-events: none;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  left: calc(50% - 18px);
+  top: calc(50% - 18px);
+}
+
+.container .slider-button:after {
+  content: '';
+  padding: 3px;
+  display: inline-block;
+  border: solid #5D5D5D;
+  border-width: 0 2px 2px 0;
+  transform: rotate(-45deg);
+}
+
+.container .slider-button:before {
+  content: '';
+  padding: 3px;
+  display: inline-block;
+  border: solid #5D5D5D;
+  border-width: 0 2px 2px 0;
+  transform: rotate(135deg);
+}
