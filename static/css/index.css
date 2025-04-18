@@ -183,10 +183,18 @@ body {
   border-radius: 50%;
 } */
 
-.container {
+/* .container {
   position: relative;
   width: 400px;
   height: 400px;
+  border: 2px solid white;
+} */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;       /* or whatever your ideal max is */
+  height: auto;            /* let the content dictate height */
+  margin: 0 auto;          /* center when viewport > max-width */
   border: 2px solid white;
 }
 
