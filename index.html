@@ -96,7 +96,7 @@
                             <div class="publication-links">
                                 <!-- PDF Link. -->
                                 <span class="link-block">
-                                    <a href=""
+                                    <a href="https://maxsun.io/post/2025-rss-fmec/rss25flow.pdf"
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fa fa-file-pdf"></i>
@@ -118,7 +118,7 @@
 
                                 <!-- Video Link. -->
                                 <span class="link-block">
-                                    <a href=""
+                                    <a href="https://maxsun.io/post/2025-rss-fmec/"
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fab fa-youtube"></i>
@@ -158,7 +158,21 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Ergodic coverage provides a robust framework for generating exploratory behaviors in embodied agents by aligning the spatial distribution of an agent's trajectory with a target distribution. However, solving this optimization problem is challenging due to the need to minimize the difference between distributions while respecting the agent's dynamic constraints. In this work, we propose an alternative approach to ergodic coverage through an unconstrained optimization paradigm based on flow matching, a technique widely used in variational inference and generative modeling for efficient and scalable sampling. We formally show that the flow matching problem for ergodic coverage is equivalent to a linear quadratic optimal control problem, enabling a closed-form solution. Numerical benchmarks demonstrate that our method offers two key advantages: (1) it enables unconstrained optimization under the standard Fourier ergodic metric with comparable coverage performance and improved computational efficiency compared to existing trajectory optimization methods, and (2) it facilitates the use of alternative metrics to address the limitations of existing methods. Specifically, incorporating Stein variational gradient flow enables ergodic coverage over unnormalized distributions without compromising coverage performance or computational efficiency, and incorporating optimal transport-based flow significantly improves coverage performance for non-smooth distributions. Finally, we validate the effectiveness of our method through hardware demonstrations on a Franka Emika Panda robot.
+                            Ergodic coverage effectively generates exploratory behaviors for embodied agents by aligning the spatial distribution of
+                            the agent's trajectory with a target distribution, where the difference between these two distributions is measured by
+                            the ergodic metric. However, existing ergodic coverage methods are constrained by the limited set of ergodic metrics
+                            available for control synthesis, fundamentally limiting their performance. In this work, we propose an alternative
+                            approach to ergodic coverage based on flow matching, a technique widely used in generative inference for efficient and
+                            scalable sampling. We formally derive the flow matching problem for ergodic coverage and show that it is equivalent to a
+                            linear quadratic regulator problem with a closed-form solution. Our formulation enables alternative ergodic metrics from
+                            generative inference that overcome the limitations of existing ones. These metrics were previously infeasible for
+                            control synthesis but can now be supported with no computational overhead. Specifically, flow matching with the Stein
+                            variational gradient flow enables control synthesis directly over the score function of the target distribution,
+                            improving robustness to the unnormalized distributions; on the other hand, flow matching with the Sinkhorn divergence
+                            flow enables an optimal transport-based ergodic metric, improving coverage performance on non-smooth distributions with
+                            irregular supports. We validate the improved performance and competitive computational efficiency of our method through
+                            comprehensive numerical benchmarks and across different nonlinear dynamics. We further demonstrate the practicality of
+                            our method through a series of drawing and erasing tasks on a Franka robot.
                         </p>
                     </div>
                 </div>
