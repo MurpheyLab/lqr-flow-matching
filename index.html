@@ -233,11 +233,26 @@
         <div class="container is-max-desktop">
             <h2 class="title is-3 has-text-centered">Sinkhorn Divergence Flow</h2>
             <div class="plot-slider">
-                <button class="button is-medium" onclick="prevPlot()">
+                <button class="button is-medium" onclick="prevPlotSinkhorn()">
                     <span class="icon"><i class="fas fa-chevron-left"></i></span>
                 </button>
-                <iframe id="plotFrame" src="" title="Plotly plot"></iframe>
-                <button class="button is-medium" onclick="nextPlot()">
+                <iframe id="plotFrameSinkhorn" src="" title="Plotly plot"></iframe>
+                <button class="button is-medium" onclick="nextPlotSinkhorn()">
+                    <span class="icon"><i class="fas fa-chevron-right"></i></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h2 class="title is-3 has-text-centered">Stein Variational Gradient Flow</h2>
+            <div class="plot-slider">
+                <button class="button is-medium" onclick="prevPlotStein()">
+                    <span class="icon"><i class="fas fa-chevron-left"></i></span>
+                </button>
+                <iframe id="plotFrameStein" src="" title="Plotly plot"></iframe>
+                <button class="button is-medium" onclick="nextPlotStein()">
                     <span class="icon"><i class="fas fa-chevron-right"></i></span>
                 </button>
             </div>
@@ -255,7 +270,7 @@
 
     <!-- Slider JS -->
     <script>
-        const plots = [
+        const plotsSinkhorn = [
             "html/sinkhorn_airplane.html",
             "html/sinkhorn_eifeltower.html",
             "html/sinkhorn_fire.html",
@@ -267,23 +282,46 @@
             "html/sinkhorn_thunder.html",
             "html/sinkhorn_trophy.html",
         ];
-        let currentIndex = 0;
+        let currentIndexSinkhorn = 0;
 
-        function showPlot(index) {
-            currentIndex = (index + plots.length) % plots.length;
-            document.getElementById("plotFrame").src = plots[currentIndex];
+        function showPlotSinkhorn(index) {
+            currentIndexSinkhorn = (index + plotsSinkhorn.length) % plotsSinkhorn.length;
+            document.getElementById("plotFrameSinkhorn").src = plotsSinkhorn[currentIndexSinkhorn];
         }
 
-        function prevPlot() {
-            showPlot(currentIndex - 1);
+        function prevPlotSinkhorn() {
+            showPlotSinkhorn(currentIndexSinkhorn - 1);
         }
 
-        function nextPlot() {
-            showPlot(currentIndex + 1);
+        function nextPlotSinkhorn() {
+            showPlotSinkhorn(currentIndexSinkhorn + 1);
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            showPlot(0);
+            showPlotSinkhorn(0);
+        });
+
+        const plotsStein = [
+            "html/stein_N.html",
+            "html/stein_U.html",
+        ];
+        let currentIndexStein = 0;
+
+        function showPlotStein(index) {
+            currentIndexStein = (index + plotsStein.length) % plotsStein.length;
+            document.getElementById("plotFrameStein").src = plotsStein[currentIndexStein];
+        }
+
+        function prevPlotStein() {
+            showPlotStein(currentIndexStein - 1);
+        }
+
+        function nextPlotStein() {
+            showPlotStein(currentIndexStein + 1);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            showPlotStein(0);
         });
     </script>
 </body>
