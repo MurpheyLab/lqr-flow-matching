@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -8,17 +8,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Flow Matching Ergodic Coverage</title>
 
+    <!-- Fonts & icons -->
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
+    <!-- Bulma & custom CSS -->
     <link rel="stylesheet" href="./static/css/bulma.min.css">
     <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="icon" href="./static/images/favicon.svg">
 
+    <!-- Page-specific CSS -->
+    <style>
+        /* Slider container */
+        .plot-slider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 2em 0;
+        }
+
+        .plot-slider iframe {
+            flex: 1;
+            width: 100%;
+            height: 950px;
+            /* adjust as needed */
+            border: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+
+        .plot-slider .button {
+            flex: 0 0 auto;
+        }
+    </style>
+
+    <!-- JS dependencies -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="./static/js/fontawesome.all.min.js"></script>
     <script src="./static/js/bulma-carousel.min.js"></script>
@@ -28,174 +55,142 @@
 </head>
 
 <body>
-
+    <!-- Navbar -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
             </a>
         </div>
         <div class="navbar-menu">
             <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
                 <a class="navbar-item" href="https://murpheylab.github.io/">
-                    <span class="icon">
-                        <i class="fas fa-home"></i>
-                    </span>
+                    <span class="icon"><i class="fas fa-home"></i></span>
                 </a>
-
-                <!-- <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        About Authors
-                    </a>
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" href="https://maxsun.io/">
-                            Max Muchen Sun
-                        </a>
-                        <a class="navbar-item" href="https://apinosky.github.io/">
-                            Allison Pinosky
-                        </a>
-                        <a class="navbar-item" href="https://murpheylab.github.io/people/toddmurphey">
-                            Todd Murphey
-                        </a>
-                    </div>
-                </div> -->
             </div>
-
         </div>
     </nav>
 
-
+    <!-- Hero header -->
     <section class="hero">
         <div class="hero-body">
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <h1 class="title is-1 publication-title">Flow Matching Ergodic Coverage</h1>
-                        <h1 class="title is-4 publication-subtitle" style="color: #990000">
+                        <h2 class="title is-4 publication-subtitle" style="color: #990000">
                             <a href="https://roboticsconference.org/" target="_blank" rel="noopener noreferrer">
-                                Robotics: Science and Systems (RSS) 2025, Los Angeles, CA
+                                Robotics: Science and Systems (RSS) 2025, Los Angeles, CA
                             </a>
-                        </h1>
-
+                        </h2>
                         <div class="is-size-5 publication-authors">
-                            <span class="author-block">
-                                <a href="https://maxsun.io">Max Muchen Sun</a>,</span>
-                            <span class="author-block">
-                                <a href="https://apinosky.github.io">Allison Pinosky</a>,</span>
-                            <span class="author-block">
-                                <a href="https://murpheylab.github.io/people/toddmurphey">Todd Murphey</a></span>
+                            <a href="https://maxsun.io">Max Muchen Sun</a>,
+                            <a href="https://apinosky.github.io">Allison Pinosky</a>,
+                            <a href="https://murpheylab.github.io/people/toddmurphey">Todd Murphey</a>
                         </div>
-
                         <div class="is-size-5 publication-authors">
-                            <span class="author-block">Department of Mechanical Engineering, Northwestern University</span>
+                            Department of Mechanical Engineering, Northwestern University
                         </div>
-
-                        <div class="column has-text-centered">
-                            <div class="publication-links">
-                                <!-- PDF Link. -->
-                                <span class="link-block">
-                                    <a href="https://arxiv.org/abs/2504.17872"
-                                        class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fa fa-file-pdf"></i>
-                                        </span>
-                                        <span>PDF</span>
-                                    </a>
-                                </span>
-                                
-                                <!-- Code Link. -->
-                                <span class="link-block">
-                                    <a href="https://github.com/MurpheyLab/flow-ergodic-coverage.git"
-                                        class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fab fa-github"></i>
-                                        </span>
-                                        <span>Code</span>
-                                    </a>
-                                </span>
-
-                                <!-- Video Link. -->
-                                <span class="link-block">
-                                    <a href="./static/videos/rss25flow.mp4"
-                                        class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fab fa-youtube"></i>
-                                        </span>
-                                        <span>Video</span>
-                                    </a>
-                                </span>
-                            </div>
+                        <div class="publication-links" style="margin-top:1em">
+                            <a href="https://arxiv.org/abs/2504.17872" class="button is-normal is-rounded is-dark">
+                                <span class="icon"><i class="fa fa-file-pdf"></i></span><span>PDF</span>
+                            </a>
+                            <a href="https://github.com/MurpheyLab/flow-ergodic-coverage.git"
+                                class="button is-normal is-rounded is-dark">
+                                <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+                            </a>
+                            <a href="./static/videos/rss25flow.mp4" class="button is-normal is-rounded is-dark">
+                                <span class="icon"><i class="fab fa-youtube"></i></span><span>Video</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
     </section>
 
+    <!-- Teaser video -->
     <section class="hero teaser">
         <div class="container is-max-desktop">
-            <div class="hero-body">
-                <video id="teaser" autoplay muted loop playsinline height="100%">
+            <div class="hero-body has-text-centered">
+                <video id="teaser" autoplay muted loop playsinline style="max-width:100%;">
                     <source src="./static/videos/franka_erasing.mp4" type="video/mp4">
                 </video>
-                </script>
-                <h2 class="subtitle has-text-centered">
-                    <!-- <h2 class="title is-3"></h2> -->
-                    Closed-loop erasing experiment with a Franka robot.
-                </h2>
+                <h2 class="subtitle">Closed-loop erasing experiment with a Franka robot.</h2>
             </div>
         </div>
     </section>
 
+    <!-- Abstract -->
     <section class="section">
         <div class="container is-max-desktop">
-            <!-- Abstract. -->
-            <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
-                    <h2 class="title is-3">Abstract</h2>
-                    <div class="content has-text-justified">
-                        <p>
-                            Ergodic coverage effectively generates exploratory behaviors for embodied agents by aligning the spatial distribution of
-                            the agent's trajectory with a target distribution, where the difference between these two distributions is measured by
-                            the ergodic metric. However, existing ergodic coverage methods are constrained by the limited set of ergodic metrics
-                            available for control synthesis, fundamentally limiting their performance. In this work, we propose an alternative
-                            approach to ergodic coverage based on flow matching, a technique widely used in generative inference for efficient and
-                            scalable sampling. We formally derive the flow matching problem for ergodic coverage and show that it is equivalent to a
-                            linear quadratic regulator problem with a closed-form solution. Our formulation enables alternative ergodic metrics from
-                            generative inference that overcome the limitations of existing ones. These metrics were previously infeasible for
-                            control synthesis but can now be supported with no computational overhead. Specifically, flow matching with the Stein
-                            variational gradient flow enables control synthesis directly over the score function of the target distribution,
-                            improving robustness to the unnormalized distributions; on the other hand, flow matching with the Sinkhorn divergence
-                            flow enables an optimal transport-based ergodic metric, improving coverage performance on non-smooth distributions with
-                            irregular supports. We validate the improved performance and competitive computational efficiency of our method through
-                            comprehensive numerical benchmarks and across different nonlinear dynamics. We further demonstrate the practicality of
-                            our method through a series of drawing and erasing tasks on a Franka robot.
-                        </p>
-                    </div>
-                </div>
+            <h2 class="title is-3 has-text-centered">Abstract</h2>
+            <div class="content">
+                <p>
+                    Ergodic coverage effectively generates exploratory behaviors for embodied agents by aligning …
+                </p>
             </div>
-            <!-- / Abstract. -->
         </div>
     </section>
 
+    <!-- Plotly Slider -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h2 class="title is-3 has-text-centered">Sinkhorn Divergence Flow</h2>
+            <div class="plot-slider">
+                <button class="button is-medium" onclick="prevPlot()">
+                    <span class="icon"><i class="fas fa-chevron-left"></i></span>
+                </button>
+                <iframe id="plotFrame" src="" title="Plotly plot"></iframe>
+                <button class="button is-medium" onclick="nextPlot()">
+                    <span class="icon"><i class="fas fa-chevron-right"></i></span>
+                </button>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-8">
-                    <div class="content">
-                        <p>
-                            Website template borrowed from <a href="https://nerfies.github.io">Nerfies</a>.
-                        </p>
-                    </div>
-                </div>
+            <div class="content has-text-centered">
+                Website template borrowed from <a href="https://nerfies.github.io">Nerfies</a>.
             </div>
         </div>
     </footer>
 
+    <!-- Slider JS -->
+    <script>
+        const plots = [
+            "html/sinkhorn_airplane.html",
+            "html/sinkhorn_eifeltower.html",
+            "html/sinkhorn_fire.html",
+            "html/sinkhorn_heart.html",
+            "html/sinkhorn_lock.html",
+            "html/sinkhorn_scissors.html",
+            "html/sinkhorn_star.html",
+            "html/sinkhorn_sword.html",
+            "html/sinkhorn_thunder.html",
+            "html/sinkhorn_trophy.html",
+        ];
+        let currentIndex = 0;
+
+        function showPlot(index) {
+            currentIndex = (index + plots.length) % plots.length;
+            document.getElementById("plotFrame").src = plots[currentIndex];
+        }
+
+        function prevPlot() {
+            showPlot(currentIndex - 1);
+        }
+
+        function nextPlot() {
+            showPlot(currentIndex + 1);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            showPlot(0);
+        });
+    </script>
 </body>
 
 </html>
