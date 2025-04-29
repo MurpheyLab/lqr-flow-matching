@@ -33,7 +33,7 @@
         .plot-slider iframe {
             flex: 1;
             width: 100%;
-            height: 950px;
+            height: 650px;
             /* adjust as needed */
             border: none;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -113,7 +113,7 @@
     <section class="hero teaser">
         <div class="container is-max-desktop">
             <div class="hero-body has-text-centered">
-                <video id="teaser" autoplay muted loop playsinline style="max-width:100%;">
+                <video id="teaser" controls autoplay muted loop playsinline style="max-width:100%;">
                     <source src="./static/videos/franka_erasing.mp4" type="video/mp4">
                 </video>
                 <h2 class="subtitle">Closed-loop erasing experiment with a Franka robot.</h2>
@@ -127,7 +127,21 @@
             <h2 class="title is-3 has-text-centered">Abstract</h2>
             <div class="content">
                 <p>
-                    Ergodic coverage effectively generates exploratory behaviors for embodied agents by aligning …
+                    Ergodic coverage effectively generates exploratory behaviors for embodied agents by aligning the spatial distribution of
+                    the agent's trajectory with a target distribution, where the difference between these two distributions is measured by
+                    the ergodic metric. However, existing ergodic coverage methods are constrained by the limited set of ergodic metrics
+                    available for control synthesis, fundamentally limiting their performance. In this work, we propose an alternative
+                    approach to ergodic coverage based on flow matching, a technique widely used in generative inference for efficient and
+                    scalable sampling. We formally derive the flow matching problem for ergodic coverage and show that it is equivalent to a
+                    linear quadratic regulator problem with a closed-form solution. Our formulation enables alternative ergodic metrics from
+                    generative inference that overcome the limitations of existing ones. These metrics were previously infeasible for
+                    control synthesis but can now be supported with no computational overhead. Specifically, flow matching with the Stein
+                    variational gradient flow enables control synthesis directly over the score function of the target distribution,
+                    improving robustness to the unnormalized distributions; on the other hand, flow matching with the Sinkhorn divergence
+                    flow enables an optimal transport-based ergodic metric, improving coverage performance on non-smooth distributions with
+                    irregular supports. We validate the improved performance and competitive computational efficiency of our method through
+                    comprehensive numerical benchmarks and across different nonlinear dynamics. We further demonstrate the practicality of
+                    our method through a series of drawing and erasing tasks on a Franka robot.
                 </p>
             </div>
         </div>
