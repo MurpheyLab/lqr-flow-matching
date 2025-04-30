@@ -233,6 +233,15 @@
         <div class="container is-max-desktop">
             <h2 class="title is-3 has-text-centered">Sinkhorn Divergence Flow</h2>
             <div class="plot-slider">
+                <button class="button is-medium" onclick="prevPlotSinkhorn3D()">
+                    <span class="icon"><i class="fas fa-chevron-left"></i></span>
+                </button>
+                <iframe id="plotFrameSinkhorn3D" src="" title="Plotly plot"></iframe>
+                <button class="button is-medium" onclick="nextPlotSinkhorn3D()">
+                    <span class="icon"><i class="fas fa-chevron-right"></i></span>
+                </button>
+            </div>
+            <div class="plot-slider">
                 <button class="button is-medium" onclick="prevPlotSinkhorn()">
                     <span class="icon"><i class="fas fa-chevron-left"></i></span>
                 </button>
@@ -270,6 +279,28 @@
 
     <!-- Slider JS -->
     <script>
+        const plotsSinkhorn3D = [
+                "html/sinkhorn_bunny.html",
+        ];
+        let currentIndexSinkhorn3D = 0;
+
+        function showPlotSinkhorn3D(index) {
+            currentIndexSinkhorn3D = (index + plotsSinkhorn3D.length) % plotsSinkhorn3D.length;
+            document.getElementById("plotFrameSinkhorn3D").src = plotsSinkhorn3D[currentIndexSinkhorn3D];
+        }
+
+        function prevPlotSinkhorn3D() {
+            showPlotSinkhorn3D(currentIndexSinkhorn3D - 1);
+        }
+
+        function nextPlotSinkhorn3D() {
+            showPlotSinkhorn3D(currentIndexSinkhorn3D + 1);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            showPlotSinkhorn3D(0);
+        });
+        
         const plotsSinkhorn = [
             "html/sinkhorn_airplane.html",
             "html/sinkhorn_eifeltower.html",
